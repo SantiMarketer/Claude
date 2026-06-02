@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Un viaje por el Sistema Solar: ebook infantil ilustrado para descubrir los planetas, las estrellas y el espacio." />
+  <title>Un Viaje por el Sistema Solar 🚀</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Cielo de estrellas animado de fondo -->
+  <div class="estrellas-fondo" aria-hidden="true"></div>
+
+  <main class="libro" role="main" aria-label="Ebook: Un viaje por el Sistema Solar">
+    <div class="paginas">
+
+      <!-- ===================== PÁGINA 1: PORTADA ===================== -->
+      <section class="pagina portada activa" aria-label="Portada">
+        <div class="portada-ilustracion">
+          <svg viewBox="0 0 300 260" role="img" aria-label="Cohete despegando entre planetas y estrellas">
+            <!-- Planeta con anillo -->
+            <g class="flotando">
+              <circle cx="245" cy="55" r="26" fill="#ffb86b"/>
+              <ellipse cx="245" cy="55" rx="42" ry="12" fill="none" stroke="#ffe49b" stroke-width="5" transform="rotate(-18 245 55)"/>
+            </g>
+            <!-- Planeta azul -->
+            <circle cx="48" cy="70" r="20" fill="#7fd1ff"/>
+            <circle cx="42" cy="64" r="6" fill="#bfeaff"/>
+            <!-- Estela del cohete -->
+            <path d="M150 250 C 130 200, 130 160, 150 120 C 170 160, 170 200, 150 250 Z" fill="#ff9472" opacity="0.4"/>
+            <!-- Cohete -->
+            <g class="flotando">
+              <path d="M150 40 C 175 70, 178 120, 168 160 L 132 160 C 122 120, 125 70, 150 40 Z" fill="#f4f6ff"/>
+              <circle cx="150" cy="95" r="14" fill="#7fd1ff" stroke="#2c357a" stroke-width="4"/>
+              <path d="M132 150 L 112 178 L 134 168 Z" fill="#ff6b6b"/>
+              <path d="M168 150 L 188 178 L 166 168 Z" fill="#ff6b6b"/>
+              <path d="M150 160 C 158 172, 158 184, 150 198 C 142 184, 142 172, 150 160 Z" fill="#ffd54a"/>
+            </g>
+            <!-- Estrellas -->
+            <g fill="#ffe9a8">
+              <path d="M90 30 l3 7 7 1 -5 5 1 7 -6 -4 -6 4 1 -7 -5 -5 7 -1 z"/>
+              <path d="M210 150 l2 5 5 1 -4 3 1 5 -4 -3 -4 3 1 -5 -4 -3 5 -1 z"/>
+              <circle cx="30" cy="160" r="3"/>
+              <circle cx="270" cy="200" r="3"/>
+              <circle cx="120" cy="200" r="2.5"/>
+            </g>
+          </svg>
+        </div>
+        <h1>Un Viaje por el<br/>Sistema Solar</h1>
+        <p class="subtitulo">✨ Una aventura espacial para pequeños exploradores ✨</p>
+        <button class="boton-empezar" id="btnEmpezar">🚀 ¡Empezar la aventura!</button>
+        <p class="autores">Con Luna y su perro robot, Cometa</p>
+      </section>
+
+      <!-- ===================== PÁGINA 2: PRESENTACIÓN ===================== -->
+      <section class="pagina" aria-label="Presentación">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Bienvenida</span>
+            <h2>¡Hola, explorador!</h2>
+            <p>Me llamo <strong>Luna</strong> y este es mi mejor amigo: <strong>Cometa</strong>, un perro robot que ladra chispitas de colores.</p>
+            <p>Juntos viajamos por el espacio en nuestro cohete brillante. Hoy vamos a conocer el <strong>Sistema Solar</strong>, la gran familia de planetas que da vueltas alrededor del Sol.</p>
+            <p>¿Te apuntas? Ponte el casco, abróchate el cinturón y... ¡3, 2, 1, despegamos!</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              El Sistema Solar tiene 8 planetas, y todos dan vueltas alrededor del Sol como en un carrusel gigante.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="La astronauta Luna y su perro robot Cometa">
+              <!-- Astronauta -->
+              <g class="flotando">
+                <ellipse cx="110" cy="285" rx="55" ry="10" fill="#d8dcff" opacity="0.5"/>
+                <!-- Cuerpo -->
+                <rect x="78" y="150" width="64" height="90" rx="28" fill="#f4f6ff" stroke="#c3c9f0" stroke-width="3"/>
+                <!-- Casco -->
+                <circle cx="110" cy="120" r="44" fill="#eaf6ff" stroke="#c3c9f0" stroke-width="4"/>
+                <path d="M82 110 a30 30 0 0 1 50 -16" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+                <!-- Cara -->
+                <circle cx="98" cy="124" r="5" fill="#2a2a4a"/>
+                <circle cx="122" cy="124" r="5" fill="#2a2a4a"/>
+                <path d="M100 138 q10 9 20 0" fill="none" stroke="#2a2a4a" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="90" cy="134" r="4" fill="#ff8fc8" opacity="0.7"/>
+                <circle cx="130" cy="134" r="4" fill="#ff8fc8" opacity="0.7"/>
+                <!-- Brazos -->
+                <rect x="58" y="158" width="22" height="58" rx="11" fill="#f4f6ff" stroke="#c3c9f0" stroke-width="3"/>
+                <rect x="140" y="158" width="22" height="58" rx="11" fill="#f4f6ff" stroke="#c3c9f0" stroke-width="3"/>
+                <!-- Insignia -->
+                <circle cx="110" cy="185" r="12" fill="#ff6b6b"/>
+                <path d="M110 178 l2 5 5 0 -4 4 1 5 -4 -3 -4 3 1 -5 -4 -4 5 0 z" fill="#ffe9a8"/>
+                <!-- Piernas -->
+                <rect x="84" y="236" width="22" height="36" rx="10" fill="#f4f6ff" stroke="#c3c9f0" stroke-width="3"/>
+                <rect x="114" y="236" width="22" height="36" rx="10" fill="#f4f6ff" stroke="#c3c9f0" stroke-width="3"/>
+              </g>
+              <!-- Perro robot Cometa -->
+              <g class="flotando" style="animation-delay:1s">
+                <rect x="195" y="205" width="74" height="50" rx="14" fill="#7fd1ff" stroke="#2c357a" stroke-width="3"/>
+                <rect x="210" y="170" width="44" height="42" rx="12" fill="#b388ff" stroke="#2c357a" stroke-width="3"/>
+                <circle cx="222" cy="190" r="6" fill="#fff"/><circle cx="222" cy="190" r="3" fill="#2a2a4a"/>
+                <circle cx="242" cy="190" r="6" fill="#fff"/><circle cx="242" cy="190" r="3" fill="#2a2a4a"/>
+                <rect x="226" y="200" width="12" height="6" rx="3" fill="#2a2a4a"/>
+                <!-- Antena -->
+                <line x1="232" y1="170" x2="232" y2="152" stroke="#2c357a" stroke-width="3"/>
+                <circle cx="232" cy="148" r="5" fill="#ffd54a"/>
+                <!-- Orejas -->
+                <path d="M210 172 l-8 -14 14 4 z" fill="#b388ff" stroke="#2c357a" stroke-width="2"/>
+                <path d="M254 172 l8 -14 -14 4 z" fill="#b388ff" stroke="#2c357a" stroke-width="2"/>
+                <!-- Patas -->
+                <rect x="202" y="252" width="12" height="16" rx="4" fill="#2c357a"/>
+                <rect x="250" y="252" width="12" height="16" rx="4" fill="#2c357a"/>
+                <!-- Cola -->
+                <path d="M269 220 q22 -6 18 -26" fill="none" stroke="#ffd54a" stroke-width="5" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 3: EL SOL ===================== -->
+      <section class="pagina" aria-label="El Sol">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">La estrella reina</span>
+            <h2>El Sol</h2>
+            <p>El Sol es una <strong>estrella enorme</strong> de fuego que nos da luz y calor. Sin él, todo estaría oscuro y muy, muy frío.</p>
+            <p>Es tan grande que dentro de él cabrían más de <strong>un millón de Tierras</strong>. ¡Imagina una pelota gigante de luz!</p>
+            <p>Nunca debemos mirarlo directamente, porque su luz es muy fuerte para nuestros ojos.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              La luz del Sol tarda unos 8 minutos en llegar hasta la Tierra viajando por el espacio.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El Sol sonriente con rayos">
+              <g class="girando">
+                <g fill="#ffce3a">
+                  <path d="M150 20 l14 36 -28 0 z"/>
+                  <path d="M150 280 l14 -36 -28 0 z"/>
+                  <path d="M20 150 l36 14 0 -28 z"/>
+                  <path d="M280 150 l-36 14 0 -28 z"/>
+                  <path d="M55 55 l34 12 -22 22 z"/>
+                  <path d="M245 55 l-34 12 22 22 z"/>
+                  <path d="M55 245 l34 -12 -22 -22 z"/>
+                  <path d="M245 245 l-34 -12 22 -22 z"/>
+                </g>
+              </g>
+              <circle cx="150" cy="150" r="86" fill="#ffd54a"/>
+              <circle cx="150" cy="150" r="86" fill="none" stroke="#ffb547" stroke-width="6"/>
+              <circle cx="124" cy="138" r="9" fill="#7a4a00"/>
+              <circle cx="176" cy="138" r="9" fill="#7a4a00"/>
+              <circle cx="112" cy="158" r="9" fill="#ff8fc8" opacity="0.6"/>
+              <circle cx="188" cy="158" r="9" fill="#ff8fc8" opacity="0.6"/>
+              <path d="M126 170 q24 24 48 0" fill="none" stroke="#7a4a00" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 4: MERCURIO ===================== -->
+      <section class="pagina" aria-label="Mercurio">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 1</span>
+            <h2>Mercurio</h2>
+            <p>Mercurio es el planeta <strong>más pequeño</strong> y el que vive <strong>más cerca del Sol</strong>. ¡Es como el hermanito de la familia!</p>
+            <p>Durante el día hace un calor altísimo, pero por la noche se vuelve heladísimo. Está lleno de hoyos llamados <strong>cráteres</strong>.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Mercurio corre tan rápido alrededor del Sol que allí un año dura solo 88 días.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Mercurio lleno de cráteres">
+              <g class="flotando">
+                <circle cx="150" cy="150" r="92" fill="#b9b6ad"/>
+                <circle cx="150" cy="150" r="92" fill="none" stroke="#8e8b84" stroke-width="5"/>
+                <circle cx="118" cy="112" r="16" fill="#9d9a92"/>
+                <circle cx="185" cy="135" r="22" fill="#9d9a92"/>
+                <circle cx="135" cy="185" r="13" fill="#9d9a92"/>
+                <circle cx="190" cy="190" r="10" fill="#9d9a92"/>
+                <circle cx="110" cy="160" r="8" fill="#9d9a92"/>
+                <circle cx="160" cy="120" r="6" fill="#9d9a92"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 5: VENUS ===================== -->
+      <section class="pagina" aria-label="Venus">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 2</span>
+            <h2>Venus</h2>
+            <p>Venus es el planeta <strong>más caliente</strong> de todos, ¡incluso más que Mercurio! Está envuelto en unas nubes muy espesas que guardan el calor como una manta.</p>
+            <p>Brilla muchísimo en el cielo. A veces lo vemos al atardecer y lo llaman <strong>"el lucero"</strong>.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Venus gira al revés que los demás planetas: ¡allí el Sol sale por el oeste!
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Venus con nubes amarillas">
+              <g class="flotando">
+                <circle cx="150" cy="150" r="92" fill="#f0c267"/>
+                <circle cx="150" cy="150" r="92" fill="none" stroke="#d89e3a" stroke-width="5"/>
+                <path d="M70 120 q40 -14 80 0 t80 0" fill="none" stroke="#f7dca0" stroke-width="10" stroke-linecap="round" opacity="0.8"/>
+                <path d="M66 155 q40 -14 84 0 t84 0" fill="none" stroke="#e0ab4b" stroke-width="9" stroke-linecap="round" opacity="0.8"/>
+                <path d="M74 190 q38 -12 76 0 t76 0" fill="none" stroke="#f7dca0" stroke-width="9" stroke-linecap="round" opacity="0.8"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 6: LA TIERRA ===================== -->
+      <section class="pagina" aria-label="La Tierra">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 3</span>
+            <h2>La Tierra</h2>
+            <p>¡Esta es nuestra casa! La Tierra es el único planeta donde sabemos que hay <strong>vida</strong>: personas, animales, plantas y... ¡tú!</p>
+            <p>Desde el espacio se ve azul por todo el <strong>agua</strong> de sus océanos, con manchas verdes y marrones de tierra y nubes blancas.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Casi tres cuartas partes de la Tierra están cubiertas de agua. Por eso la llaman "el planeta azul".
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Tierra azul y verde">
+              <g class="flotando">
+                <circle cx="150" cy="150" r="92" fill="#4aa3e0"/>
+                <circle cx="150" cy="150" r="92" fill="none" stroke="#2c7cb8" stroke-width="5"/>
+                <path d="M95 100 q35 -10 55 8 q20 18 -2 34 q-30 12 -48 -6 q-16 -22 -5 -36 z" fill="#6be6a8"/>
+                <path d="M170 150 q30 -6 40 16 q6 24 -22 30 q-30 2 -30 -22 q0 -20 12 -24 z" fill="#6be6a8"/>
+                <path d="M110 200 q24 -6 30 10 q2 16 -18 18 q-20 -2 -18 -16 z" fill="#6be6a8"/>
+                <ellipse cx="200" cy="110" rx="20" ry="9" fill="#ffffff" opacity="0.7"/>
+                <ellipse cx="95" cy="175" rx="16" ry="7" fill="#ffffff" opacity="0.7"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 7: LA LUNA ===================== -->
+      <section class="pagina" aria-label="La Luna">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Nuestra vecina</span>
+            <h2>La Luna</h2>
+            <p>La Luna es la compañera de la Tierra. Da vueltas a nuestro alrededor y la vemos brillar de noche, aunque en realidad solo refleja la luz del Sol.</p>
+            <p>A veces la vemos redonda y a veces como una sonrisa: son sus <strong>fases</strong>. Allí no hay aire, por eso los astronautas llevan trajes especiales.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              En la Luna no hay viento, así que las huellas que dejaron los astronautas ¡siguen ahí desde hace muchos años!
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="La Luna con cráteres y una bandera">
+              <g class="flotando">
+                <circle cx="150" cy="150" r="92" fill="#e8e6df"/>
+                <circle cx="150" cy="150" r="92" fill="none" stroke="#c2bfb6" stroke-width="5"/>
+                <circle cx="120" cy="120" r="18" fill="#d2cfc6"/>
+                <circle cx="185" cy="150" r="24" fill="#d2cfc6"/>
+                <circle cx="130" cy="190" r="14" fill="#d2cfc6"/>
+                <circle cx="172" cy="105" r="9" fill="#d2cfc6"/>
+                <circle cx="110" cy="165" r="7" fill="#d2cfc6"/>
+                <!-- Banderita -->
+                <line x1="205" y1="95" x2="205" y2="60" stroke="#7a4a00" stroke-width="3"/>
+                <path d="M205 60 l24 8 -24 10 z" fill="#ff6b6b"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 8: MARTE ===================== -->
+      <section class="pagina" aria-label="Marte">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 4</span>
+            <h2>Marte</h2>
+            <p>Marte es el <strong>planeta rojo</strong>. Es de color naranja porque su suelo está lleno de polvo parecido al óxido, como el de un clavo viejo.</p>
+            <p>Es frío y tiene grandes montañas y desiertos. Allí no viven personas todavía, pero hemos enviado <strong>robots exploradores</strong> que pasean tomando fotos.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              En Marte está el volcán más alto del Sistema Solar, el Monte Olimpo: ¡casi tres veces más alto que el Everest!
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Marte rojo con un robot explorador">
+              <g class="flotando">
+                <circle cx="150" cy="150" r="92" fill="#e0653a"/>
+                <circle cx="150" cy="150" r="92" fill="none" stroke="#b6431f" stroke-width="5"/>
+                <ellipse cx="130" cy="110" rx="26" ry="12" fill="#c14e26" opacity="0.7"/>
+                <ellipse cx="185" cy="170" rx="20" ry="10" fill="#c14e26" opacity="0.7"/>
+                <circle cx="120" cy="180" r="10" fill="#f08a5f"/>
+                <circle cx="170" cy="120" r="7" fill="#f08a5f"/>
+                <!-- Casquete polar -->
+                <ellipse cx="150" cy="72" rx="30" ry="10" fill="#ffffff" opacity="0.85"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 9: JÚPITER ===================== -->
+      <section class="pagina" aria-label="Júpiter">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 5</span>
+            <h2>Júpiter</h2>
+            <p>Júpiter es el planeta <strong>más grande</strong> de todos. ¡Es tan enorme que cabrían más de mil Tierras dentro de él!</p>
+            <p>No es de roca, sino de gas, y tiene rayas de colores. En una de ellas hay una <strong>gran mancha roja</strong>, que es una tormenta gigantesca.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              La Gran Mancha Roja es una tormenta tan grande que cabrían varias Tierras dentro de ella.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Júpiter con rayas y la gran mancha roja">
+              <defs>
+                <clipPath id="jupiterClip"><circle cx="150" cy="150" r="92"/></clipPath>
+              </defs>
+              <g class="flotando">
+                <circle cx="150" cy="150" r="92" fill="#e8b27a"/>
+                <g clip-path="url(#jupiterClip)">
+                  <rect x="58" y="92" width="184" height="16" fill="#c98a4f"/>
+                  <rect x="58" y="120" width="184" height="14" fill="#f0d2a8"/>
+                  <rect x="58" y="150" width="184" height="18" fill="#c98a4f"/>
+                  <rect x="58" y="182" width="184" height="14" fill="#f0d2a8"/>
+                  <rect x="58" y="206" width="184" height="14" fill="#c98a4f"/>
+                  <ellipse cx="185" cy="170" rx="22" ry="14" fill="#d8543a"/>
+                  <ellipse cx="185" cy="170" rx="12" ry="7" fill="#b53a26"/>
+                </g>
+                <circle cx="150" cy="150" r="92" fill="none" stroke="#b6864c" stroke-width="5"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 10: SATURNO ===================== -->
+      <section class="pagina" aria-label="Saturno">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 6</span>
+            <h2>Saturno</h2>
+            <p>Saturno es famoso por sus preciosos <strong>anillos</strong> que lo rodean como un sombrero gigante. ¡Es el planeta más bonito de todos!</p>
+            <p>Los anillos están hechos de millones de trozos de <strong>hielo y roca</strong>, algunos pequeños como una piedrecita y otros grandes como una casa.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Saturno es tan ligero que, si hubiera una bañera lo bastante grande, ¡flotaría en el agua!
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Saturno con sus anillos">
+              <defs>
+                <clipPath id="saturnoFrente"><rect x="0" y="150" width="300" height="150"/></clipPath>
+              </defs>
+              <g class="flotando">
+                <!-- Anillo completo, detrás del planeta -->
+                <ellipse cx="150" cy="150" rx="135" ry="40" fill="none" stroke="#e7c98f" stroke-width="12" transform="rotate(-18 150 150)"/>
+                <ellipse cx="150" cy="150" rx="135" ry="40" fill="none" stroke="#fbe9bf" stroke-width="5" transform="rotate(-18 150 150)"/>
+                <!-- Cuerpo del planeta -->
+                <circle cx="150" cy="150" r="74" fill="#f3d68f"/>
+                <ellipse cx="150" cy="128" rx="56" ry="9" fill="#e6c477" opacity="0.7"/>
+                <ellipse cx="150" cy="166" rx="50" ry="8" fill="#e6c477" opacity="0.7"/>
+                <circle cx="150" cy="150" r="74" fill="none" stroke="#d9b65e" stroke-width="4"/>
+                <!-- Mitad inferior del anillo, por delante del planeta -->
+                <g clip-path="url(#saturnoFrente)">
+                  <ellipse cx="150" cy="150" rx="135" ry="40" fill="none" stroke="#e7c98f" stroke-width="12" transform="rotate(-18 150 150)"/>
+                  <ellipse cx="150" cy="150" rx="135" ry="40" fill="none" stroke="#fbe9bf" stroke-width="5" transform="rotate(-18 150 150)"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 11: URANO ===================== -->
+      <section class="pagina" aria-label="Urano">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 7</span>
+            <h2>Urano</h2>
+            <p>Urano es un planeta de color <strong>azul verdoso</strong>, como el agua de una piscina. Es muy frío porque está lejísimos del Sol.</p>
+            <p>Lo más curioso es que está <strong>tumbado de lado</strong> y rueda como una pelota mientras viaja por el espacio. ¡Qué divertido!</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Urano también tiene anillos, pero son muy finos y oscuros, así que cuesta mucho verlos.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Urano azul verdoso con anillos verticales">
+              <g class="flotando">
+                <ellipse cx="150" cy="150" rx="40" ry="120" fill="none" stroke="#9fe6e0" stroke-width="6" opacity="0.8"/>
+                <circle cx="150" cy="150" r="84" fill="#8fe3df"/>
+                <circle cx="150" cy="150" r="84" fill="none" stroke="#5cc1bd" stroke-width="5"/>
+                <ellipse cx="130" cy="125" rx="26" ry="10" fill="#aef0ec" opacity="0.7"/>
+                <ellipse cx="170" cy="175" rx="22" ry="9" fill="#6fcfca" opacity="0.6"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 12: NEPTUNO ===================== -->
+      <section class="pagina" aria-label="Neptuno">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Planeta 8</span>
+            <h2>Neptuno</h2>
+            <p>Neptuno es el planeta <strong>más lejano</strong> del Sol y de un bonito color <strong>azul oscuro</strong>. ¡Es el último de la familia!</p>
+            <p>Allí hace muchísimo frío y soplan los <strong>vientos más fuertes</strong> de todo el Sistema Solar. ¡Volarías por los aires!</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Neptuno está tan lejos que tarda 165 años de los nuestros en dar una sola vuelta al Sol.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="El planeta Neptuno azul oscuro con vientos">
+              <g class="flotando">
+                <circle cx="150" cy="150" r="92" fill="#3a6fd8"/>
+                <circle cx="150" cy="150" r="92" fill="none" stroke="#2748a0" stroke-width="5"/>
+                <path d="M80 120 q40 -12 80 0 t70 4" fill="none" stroke="#8fb4ff" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+                <path d="M75 165 q45 -12 90 0 t60 2" fill="none" stroke="#cfe0ff" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+                <ellipse cx="125" cy="190" rx="20" ry="11" fill="#27489f"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 13: ASTEROIDES ===================== -->
+      <section class="pagina" aria-label="Los asteroides">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Rocas espaciales</span>
+            <h2>Los asteroides</h2>
+            <p>Entre Marte y Júpiter hay un <strong>cinturón de rocas</strong> que flotan en el espacio. Son los asteroides, y los hay de todos los tamaños.</p>
+            <p>Algunos son pequeños como una pelota y otros tan grandes como una montaña. Giran y giran alrededor del Sol sin chocar casi nunca.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Los asteroides son como los restos de ladrillos que sobraron cuando se construyó el Sistema Solar.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Un cinturón de asteroides de roca">
+              <g class="flotando">
+                <path d="M70 90 l22 -8 18 12 -6 22 -22 6 -16 -16 z" fill="#9a8e7e" stroke="#6e6354" stroke-width="3"/>
+                <circle cx="84" cy="100" r="4" fill="#7a6f60"/>
+                <circle cx="98" cy="112" r="3" fill="#7a6f60"/>
+                <path d="M180 70 l18 -4 12 12 -6 16 -18 2 -10 -14 z" fill="#b3a796" stroke="#6e6354" stroke-width="3"/>
+                <circle cx="192" cy="80" r="3" fill="#7a6f60"/>
+                <path d="M200 170 l28 -10 24 14 -8 28 -28 8 -22 -20 z" fill="#9a8e7e" stroke="#6e6354" stroke-width="3"/>
+                <circle cx="218" cy="182" r="5" fill="#7a6f60"/>
+                <circle cx="236" cy="196" r="4" fill="#7a6f60"/>
+                <path d="M110 200 l20 -6 16 12 -6 18 -20 4 -14 -14 z" fill="#b3a796" stroke="#6e6354" stroke-width="3"/>
+                <circle cx="126" cy="210" r="4" fill="#7a6f60"/>
+                <circle cx="150" cy="140" r="7" fill="#9a8e7e" stroke="#6e6354" stroke-width="2"/>
+                <circle cx="250" cy="120" r="6" fill="#b3a796" stroke="#6e6354" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 14: COMETAS ===================== -->
+      <section class="pagina" aria-label="Los cometas">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Viajeros con cola</span>
+            <h2>Los cometas</h2>
+            <p>¡Mira, Cometa, te llamas como ellos! Los cometas son como <strong>bolas de hielo y polvo</strong> que viajan por el espacio.</p>
+            <p>Cuando se acercan al Sol, se calientan y les sale una <strong>cola brillante</strong> larguísima. ¡Parecen estrellas con melena!</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Hay un cometa muy famoso, el cometa Halley, que solo podemos ver una vez cada 76 años.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Un cometa con una cola brillante">
+              <g class="flotando">
+                <path d="M205 100 C 150 130, 90 200, 40 250 C 110 215, 175 175, 210 130 Z" fill="#7fd1ff" opacity="0.35"/>
+                <path d="M205 100 C 160 128, 115 185, 80 230 C 135 200, 180 165, 208 122 Z" fill="#b388ff" opacity="0.45"/>
+                <circle cx="212" cy="100" r="26" fill="#eaf6ff"/>
+                <circle cx="212" cy="100" r="26" fill="none" stroke="#7fd1ff" stroke-width="4"/>
+                <circle cx="204" cy="92" r="6" fill="#b9e6ff"/>
+                <circle cx="220" cy="106" r="4" fill="#b9e6ff"/>
+                <g fill="#ffe9a8">
+                  <path d="M90 90 l3 7 7 1 -5 5 1 7 -6 -4 -6 4 1 -7 -5 -5 7 -1 z"/>
+                  <circle cx="60" cy="140" r="3"/>
+                  <circle cx="150" cy="70" r="2.5"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 15: ESTRELLAS Y CONSTELACIONES ===================== -->
+      <section class="pagina" aria-label="Estrellas y constelaciones">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Puntitos de luz</span>
+            <h2>Estrellas y constelaciones</h2>
+            <p>Las <strong>estrellas</strong> son soles que están muy, muy lejos. Por eso las vemos como puntitos de luz que brillan en el cielo de noche.</p>
+            <p>Si unimos algunas estrellas con líneas imaginarias, dibujamos figuras llamadas <strong>constelaciones</strong>: ¡hay osos, leones y hasta cazadores!</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Nuestro Sol también es una estrella, pero la vemos enorme porque es la que tenemos más cerca.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Una constelación de estrellas unidas por líneas">
+              <rect x="20" y="20" width="260" height="260" rx="24" fill="#141a3e"/>
+              <g stroke="#7fd1ff" stroke-width="2" opacity="0.7">
+                <line x1="80" y1="80" x2="140" y2="120"/>
+                <line x1="140" y1="120" x2="200" y2="90"/>
+                <line x1="140" y1="120" x2="160" y2="190"/>
+                <line x1="160" y1="190" x2="110" y2="220"/>
+                <line x1="200" y1="90" x2="230" y2="150"/>
+              </g>
+              <g fill="#ffe9a8">
+                <path d="M80 80 l4 9 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1 z"/>
+                <path d="M140 120 l4 9 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1 z"/>
+                <path d="M200 90 l4 9 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1 z"/>
+                <path d="M160 190 l4 9 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1 z"/>
+                <path d="M110 220 l3 7 7 1 -5 5 1 7 -6 -4 -6 4 1 -7 -5 -5 7 -1 z"/>
+                <path d="M230 150 l3 7 7 1 -5 5 1 7 -6 -4 -6 4 1 -7 -5 -5 7 -1 z"/>
+              </g>
+              <g fill="#ffffff" opacity="0.8">
+                <circle cx="50" cy="200" r="2"/>
+                <circle cx="250" cy="60" r="2"/>
+                <circle cx="60" cy="120" r="1.6"/>
+                <circle cx="210" cy="230" r="1.6"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 16: GALAXIAS ===================== -->
+      <section class="pagina" aria-label="Las galaxias">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Islas de estrellas</span>
+            <h2>Las galaxias</h2>
+            <p>Una <strong>galaxia</strong> es un grupo gigantesco de estrellas, planetas, gas y polvo, todos juntos girando despacito como un remolino.</p>
+            <p>Nosotros vivimos en una galaxia con forma de espiral llamada <strong>Vía Láctea</strong>. ¡Tiene muchísimas estrellas, más de las que podrías contar en toda tu vida!</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              En el universo hay miles de millones de galaxias. ¡El espacio es enorme!
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Una galaxia en espiral">
+              <rect x="20" y="20" width="260" height="260" rx="24" fill="#120a2e"/>
+              <g class="girando">
+                <ellipse cx="150" cy="150" rx="110" ry="44" fill="none" stroke="#7fd1ff" stroke-width="6" opacity="0.35"/>
+                <ellipse cx="150" cy="150" rx="80" ry="32" fill="none" stroke="#b388ff" stroke-width="6" opacity="0.45" transform="rotate(35 150 150)"/>
+                <ellipse cx="150" cy="150" rx="100" ry="38" fill="none" stroke="#ff8fc8" stroke-width="5" opacity="0.4" transform="rotate(70 150 150)"/>
+                <circle cx="150" cy="150" r="26" fill="#ffe9a8"/>
+                <circle cx="150" cy="150" r="40" fill="#ffe9a8" opacity="0.3"/>
+              </g>
+              <g fill="#ffffff">
+                <circle cx="80" cy="90" r="2"/>
+                <circle cx="220" cy="210" r="2"/>
+                <circle cx="230" cy="100" r="1.6"/>
+                <circle cx="70" cy="200" r="1.6"/>
+                <circle cx="150" cy="60" r="1.6"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 17: AGUJEROS NEGROS ===================== -->
+      <section class="pagina" aria-label="Los agujeros negros">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">Un gran misterio</span>
+            <h2>Los agujeros negros</h2>
+            <p>Un <strong>agujero negro</strong> es un lugar del espacio que tira de todo lo que tiene cerca con muchísima fuerza, como un aspirador gigante.</p>
+            <p>Tira tan fuerte que ni siquiera la luz puede escapar. Por eso es negro y no podemos verlo directamente. ¡Tranquilo, están lejísimos de nosotros!</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              Los científicos consiguieron hacer la primera foto de un agujero negro en el año 2019.
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Un agujero negro con un disco de luz girando">
+              <rect x="20" y="20" width="260" height="260" rx="24" fill="#0a0820"/>
+              <g class="girando">
+                <ellipse cx="150" cy="150" rx="115" ry="34" fill="none" stroke="#ffb86b" stroke-width="10" opacity="0.85"/>
+                <ellipse cx="150" cy="150" rx="115" ry="34" fill="none" stroke="#ff6b6b" stroke-width="4" opacity="0.7"/>
+              </g>
+              <circle cx="150" cy="150" r="56" fill="#000000"/>
+              <circle cx="150" cy="150" r="56" fill="none" stroke="#ffd54a" stroke-width="6" opacity="0.6"/>
+              <circle cx="150" cy="150" r="70" fill="none" stroke="#ffb86b" stroke-width="2" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 18: SER ASTRONAUTA ===================== -->
+      <section class="pagina" aria-label="Ser astronauta">
+        <div class="pagina-contenido">
+          <div class="pagina-texto">
+            <span class="numero-tema">¡Tú puedes!</span>
+            <h2>¿Quieres ser astronauta?</h2>
+            <p>Los astronautas son personas valientes que viajan al espacio. Allí <strong>flotan</strong> porque casi no hay gravedad, ¡y hasta duermen colgados!</p>
+            <p>Para serlo hay que estudiar mucho, comer sano y hacer ejercicio. Lo más importante es tener muchas ganas de <strong>explorar y aprender</strong>.</p>
+            <div class="dato">
+              <strong>¿Sabías que...?</strong>
+              En el espacio el agua forma bolitas que flotan en el aire. ¡Los astronautas juegan a atraparlas con la boca!
+            </div>
+          </div>
+          <div class="pagina-ilustracion">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Casco de astronauta brillante">
+              <g class="flotando">
+                <circle cx="150" cy="150" r="100" fill="#f4f6ff" stroke="#c3c9f0" stroke-width="6"/>
+                <circle cx="150" cy="150" r="78" fill="#1b2350"/>
+                <path d="M100 120 a55 55 0 0 1 70 -20" fill="none" stroke="#7fd1ff" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+                <!-- Reflejo de planeta en el visor -->
+                <circle cx="170" cy="170" r="18" fill="#ff8fc8" opacity="0.8"/>
+                <ellipse cx="170" cy="170" rx="28" ry="7" fill="none" stroke="#ffe9a8" stroke-width="3" transform="rotate(-20 170 170)"/>
+                <g fill="#ffe9a8">
+                  <path d="M120 160 l2 5 5 1 -4 3 1 5 -4 -3 -4 3 1 -5 -4 -3 5 -1 z"/>
+                  <circle cx="135" cy="135" r="2.5"/>
+                </g>
+                <!-- Tornillos del casco -->
+                <circle cx="60" cy="150" r="6" fill="#c3c9f0"/>
+                <circle cx="240" cy="150" r="6" fill="#c3c9f0"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 19: QUIZ ===================== -->
+      <section class="pagina" aria-label="Juego de preguntas">
+        <div class="quiz">
+          <h2>🪐 ¡Juego espacial!</h2>
+          <p class="quiz-intro">Toca la respuesta que creas correcta. ¿Cuántas aciertas?</p>
+
+          <div class="pregunta">
+            <p class="enunciado">1. ¿Cuál es el planeta donde vivimos?</p>
+            <div class="opciones">
+              <button class="opcion" data-correcta="false">Marte</button>
+              <button class="opcion" data-correcta="true">La Tierra</button>
+              <button class="opcion" data-correcta="false">Júpiter</button>
+            </div>
+          </div>
+
+          <div class="pregunta">
+            <p class="enunciado">2. ¿Qué planeta tiene unos anillos preciosos?</p>
+            <div class="opciones">
+              <button class="opcion" data-correcta="false">Mercurio</button>
+              <button class="opcion" data-correcta="false">Venus</button>
+              <button class="opcion" data-correcta="true">Saturno</button>
+            </div>
+          </div>
+
+          <div class="pregunta">
+            <p class="enunciado">3. El Sol es en realidad una...</p>
+            <div class="opciones">
+              <button class="opcion" data-correcta="true">Estrella</button>
+              <button class="opcion" data-correcta="false">Luna</button>
+              <button class="opcion" data-correcta="false">Nube</button>
+            </div>
+          </div>
+
+          <div class="pregunta">
+            <p class="enunciado">4. ¿Cómo se llama el planeta rojo?</p>
+            <div class="opciones">
+              <button class="opcion" data-correcta="false">Neptuno</button>
+              <button class="opcion" data-correcta="true">Marte</button>
+              <button class="opcion" data-correcta="false">Urano</button>
+            </div>
+          </div>
+
+          <p class="quiz-resultado" id="quizResultado" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ===================== PÁGINA 20: FINAL ===================== -->
+      <section class="pagina final" aria-label="Fin del viaje">
+        <div class="portada-ilustracion">
+          <svg viewBox="0 0 300 220" role="img" aria-label="El cohete vuelve a casa, a la Tierra">
+            <circle cx="150" cy="170" r="70" fill="#4aa3e0"/>
+            <path d="M100 150 q35 -10 55 8 q20 18 -2 30 q-30 10 -48 -8 q-14 -18 -5 -30 z" fill="#6be6a8"/>
+            <ellipse cx="190" cy="150" rx="16" ry="7" fill="#ffffff" opacity="0.7"/>
+            <g class="flotando">
+              <path d="M150 40 C 168 62, 170 100, 162 132 L 138 132 C 130 100, 132 62, 150 40 Z" fill="#f4f6ff"/>
+              <circle cx="150" cy="82" r="11" fill="#7fd1ff" stroke="#2c357a" stroke-width="3"/>
+              <path d="M138 124 L 122 146 L 140 138 Z" fill="#ff6b6b"/>
+              <path d="M162 124 L 178 146 L 160 138 Z" fill="#ff6b6b"/>
+              <path d="M150 132 q6 10 0 22 q-6 -12 0 -22 z" fill="#ffd54a"/>
+            </g>
+          </svg>
+        </div>
+        <h2>¡Fin del viaje!</h2>
+        <p>Gracias por explorar el Sistema Solar con Luna y Cometa. Ya conoces los planetas, las estrellas, las galaxias y muchas cosas más.</p>
+        <p>El espacio es enorme y guarda muchísimos secretos por descubrir. ¿Quién sabe? Quizá algún día tú seas quien viaje a las estrellas. 🌟</p>
+        <p class="autores">Vuelve a leer el libro siempre que quieras. ¡Hasta la próxima aventura, explorador!</p>
+      </section>
+
+    </div>
+
+    <!-- ===================== BARRA DE NAVEGACIÓN ===================== -->
+    <nav class="navegacion" aria-label="Navegación del libro">
+      <button class="nav-boton" id="btnAnterior">‹ Anterior</button>
+      <div class="indicador">
+        <span id="indicador">Página 1 de 20</span>
+        <div class="barra-progreso"><div class="barra-progreso-relleno" id="barraRelleno"></div></div>
+      </div>
+      <button class="nav-boton" id="btnSiguiente">Siguiente ›</button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
