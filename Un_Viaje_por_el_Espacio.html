@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un Viaje por el Espacio</title>
+<style>
+  :root{
+    --space:#0b1437; --space2:#16205a; --cream:#fcf7ee; --ink:#2d3354;
+    --head:#3b2e7e; --accent:#ffd23f; --pink:#ff6f91; --blue:#4fa3ff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:#5a6080; font-family:"Trebuchet MS","Segoe UI",Verdana,sans-serif;
+    color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .page{
+    width:210mm; min-height:296mm; margin:18px auto; background:var(--cream);
+    border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.35); overflow:hidden;
+    position:relative; padding:26mm 22mm; display:flex; flex-direction:column;
+  }
+  .page.dark{background:radial-gradient(circle at 30% 20%, var(--space2), var(--space) 70%); color:#eef2ff;}
+  h1{font-size:46px; text-align:center; margin:.2em 0; color:#fff; text-shadow:0 3px 10px rgba(0,0,0,.4);}
+  h1 .y{color:var(--accent);}
+  h2{font-size:30px; color:var(--head); text-align:center; margin:0 0 6px;}
+  .rule{width:120px; height:4px; background:var(--accent); border-radius:3px; margin:0 auto 18px;}
+  p{font-size:17px; line-height:1.6; margin:0 0 14px;}
+  .center{text-align:center;}
+  .subtitle{font-style:italic; color:#cdd6ff; text-align:center; font-size:18px;}
+  .art{flex:0 0 auto; display:flex; align-items:center; justify-content:center;
+       gap:18px; margin:6px 0 22px; min-height:230px;}
+  .planet{border-radius:50%; box-shadow:inset -18px -18px 40px rgba(0,0,0,.45), 0 0 40px rgba(255,255,255,.12);}
+  .emoji{font-size:120px; line-height:1; filter:drop-shadow(0 6px 10px rgba(0,0,0,.3));}
+  .emoji.big{font-size:150px;}
+  .fact{margin-top:auto; background:#fff; border:2.5px solid var(--accent);
+        border-radius:16px; padding:14px 18px 14px 56px; position:relative; font-size:15px; color:#33405e;}
+  .fact b{color:#b07d00;}
+  .fact .q{position:absolute; left:14px; top:14px; width:30px; height:30px; background:var(--accent);
+           color:#5a4500; border-radius:50%; display:flex; align-items:center; justify-content:center;
+           font-weight:bold; font-size:18px;}
+  .pageno{position:absolute; bottom:12mm; left:0; right:0; text-align:center; color:#b8b0c8; font-size:13px;}
+  .page.dark .pageno{color:#9aa6d6;}
+  .stars{position:absolute; inset:0; pointer-events:none;}
+  .toc-tip{background:#fff7d6; border:2.5px solid var(--accent); border-radius:16px; padding:16px;}
+  ol.q{font-size:17px; line-height:1.9;}
+  .term{font-weight:bold; color:#7b6cff; font-size:18px;}
+  .desc{margin:2px 0 12px; border-bottom:1px solid #e6dfd0; padding-bottom:10px;}
+  @media print{
+    body{background:#fff;}
+    .page{margin:0; border-radius:0; box-shadow:none; width:auto; min-height:auto; page-break-after:always;}
+  }
+  @page{size:A4; margin:0;}
+</style>
+</head>
+<body>
+
+<!-- 1. PORTADA -->
+<section class="page dark">
+  <h1>Un Viaje por<br><span class="y">el Espacio</span></h1>
+  <p class="subtitle">Las aventuras de Lucía y su robot Tito</p>
+  <div class="art" style="min-height:320px;">
+    <div class="emoji big">🚀</div>
+    <div class="planet" style="width:120px;height:120px;background:radial-gradient(circle at 35% 30%,#bfe0ff,#3a86ff 70%,#1f5fbf);"></div>
+  </div>
+  <p class="center" style="font-size:30px;">🪐 ✨ 🌟 🌙 ⭐</p>
+  <p class="center" style="color:#aab6ec; margin-top:auto;">Un cuento para pequeños exploradores</p>
+  <div class="pageno">— 1 —</div>
+</section>
+
+<!-- 2. PRESENTACIÓN -->
+<section class="page">
+  <h2>Hola, exploradores</h2><div class="rule"></div>
+  <div class="art"><span class="emoji">👧</span><span class="emoji">🤖</span><span class="emoji">🔭</span></div>
+  <p>Esta es <b>Lucía</b>. Le encanta mirar el cielo por la noche y contar las estrellas desde la ventana de su cuarto.</p>
+  <p>Su mejor amigo es <b>Tito</b>, un robot pequeño y muy curioso que siempre tiene preguntas. Juntos sueñan con visitar las estrellas.</p>
+  <p>Esta noche, su cohete está listo. Respira hondo... porque la gran aventura va a empezar.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> las estrellas que ves de noche son soles que están muy, muy lejos.</div>
+  <div class="pageno">— 2 —</div>
+</section>
+
+<!-- 3. DESPEGUE -->
+<section class="page">
+  <h2>Tres, dos, uno...</h2><div class="rule"></div>
+  <div class="art"><span class="emoji big">🚀</span><span class="emoji">🔥</span></div>
+  <p>Tito aprieta el botón verde y empieza la cuenta atrás: tres... dos... uno...</p>
+  <p>Una nube de fuego sale del cohete y, de repente, suben hacia el cielo a toda velocidad. Lucía siente cosquillas en la barriga.</p>
+  <p>Desde la ventana, la Tierra se hace cada vez más pequeña, como una canica azul. El cielo se vuelve oscuro y aparecen miles de estrellas.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> para escapar de la Tierra, un cohete viaja más rápido que cualquier avión.</div>
+  <div class="pageno">— 3 —</div>
+</section>
+
+<!-- 4. EL SOL -->
+<section class="page">
+  <h2 style="color:#c9650a;">El Sol, la gran estrella</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:200px;height:200px;background:radial-gradient(circle at 38% 32%,#ffe79a,#ffd23f 55%,#ffb703);box-shadow:0 0 60px 20px rgba(255,183,3,.55);"></div></div>
+  <p>El Sol es una estrella enorme y es la reina de nuestro vecindario espacial. Todos los planetas giran a su alrededor.</p>
+  <p>Nos regala luz y calor. Gracias al Sol hay días, plantas y vida en la Tierra. Pero nunca, nunca hay que mirarlo directamente: es demasiado brillante.</p>
+  <p>Lucía y Tito lo observan desde lejos con las gafas especiales del cohete.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> dentro del Sol cabrían más de un millón de planetas como la Tierra.</div>
+  <div class="pageno">— 4 —</div>
+</section>
+
+<!-- 5. MERCURIO -->
+<section class="page">
+  <h2 style="color:#8a6d3b;">Mercurio, el más veloz</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:160px;height:160px;background:radial-gradient(circle at 35% 30%,#cfc7bb,#9c9388 70%,#6f675c);"></div></div>
+  <p>Mercurio es el planeta más cercano al Sol y también el más pequeño de todos.</p>
+  <p>Corre tan rápido alrededor del Sol que su año dura muy poquito. Su superficie está llena de hoyos llamados cráteres, parecidos a los de la Luna.</p>
+  <p>De día hace muchísimo calor y de noche un frío terrible. Tito dice que mejor no bajar a jugar.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> un año en Mercurio dura solo 88 días terrestres.</div>
+  <div class="pageno">— 5 —</div>
+</section>
+
+<!-- 6. VENUS -->
+<section class="page">
+  <h2 style="color:#b07d00;">Venus, la más brillante</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:180px;height:180px;background:radial-gradient(circle at 35% 30%,#ffe6a8,#f0c46b 65%,#c79a3e);"></div></div>
+  <p>Venus es el planeta que más brilla en el cielo. A veces se ve como una estrella muy luminosa al amanecer o al atardecer.</p>
+  <p>Está cubierto por nubes muy espesas que guardan el calor, por eso es el planeta más caliente de todos, incluso más que Mercurio.</p>
+  <p>Lucía piensa que parece una perla dorada flotando en el espacio.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> en Venus un día dura más que todo un año.</div>
+  <div class="pageno">— 6 —</div>
+</section>
+
+<!-- 7. LA TIERRA -->
+<section class="page">
+  <h2 style="color:#1f6f8b;">La Tierra, nuestro hogar</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:185px;height:185px;background:radial-gradient(circle at 32% 28%,#9ec9ff,#3a86ff 60%,#1f5fbf);"></div><span class="emoji">🌍</span></div>
+  <p>La Tierra es nuestro planeta azul, el lugar donde vivimos todos.</p>
+  <p>Tiene agua, aire y la temperatura justa para que existan plantas, animales y personas. Es el único planeta donde sabemos que hay vida.</p>
+  <p>Por eso Lucía y Tito prometen cuidarla siempre: no tirar basura, ahorrar agua y querer a la naturaleza.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> casi tres cuartas partes de la Tierra están cubiertas de agua.</div>
+  <div class="pageno">— 7 —</div>
+</section>
+
+<!-- 8. LA LUNA -->
+<section class="page">
+  <h2 style="color:#5b6270;">La Luna, nuestra vecina</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:175px;height:175px;background:radial-gradient(circle at 33% 30%,#f3f5f8,#d9dde3 65%,#a7adb8);"></div><span class="emoji">🌙</span></div>
+  <p>La Luna acompaña a la Tierra y gira a su alrededor como una amiga fiel.</p>
+  <p>No tiene aire ni agua, y su superficie está llena de cráteres. Algunos astronautas caminaron sobre ella y dejaron sus huellas.</p>
+  <p>A veces la vemos redonda y otras veces solo un trocito: son las fases de la Luna.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> las huellas de los astronautas siguen en la Luna porque allí no hay viento.</div>
+  <div class="pageno">— 8 —</div>
+</section>
+
+<!-- 9. MARTE -->
+<section class="page">
+  <h2 style="color:#b23a25;">Marte, el planeta rojo</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:175px;height:175px;background:radial-gradient(circle at 34% 30%,#ff9173,#e5533c 65%,#b23a25);"></div></div>
+  <p>Marte es famoso por su color rojo, que viene del polvo oxidado que cubre su suelo, parecido al hierro viejo.</p>
+  <p>En Marte hay montañas gigantes y desiertos. Varios robots exploradores pasean por allí sacando fotos y estudiando sus rocas.</p>
+  <p>Tito sueña con que algún día las personas puedan visitarlo.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> el volcán más alto de todo el sistema solar está en Marte.</div>
+  <div class="pageno">— 9 —</div>
+</section>
+
+<!-- 10. JÚPITER -->
+<section class="page">
+  <h2 style="color:#9a6a30;">Júpiter, el gigante</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:210px;height:210px;background:repeating-linear-gradient(0deg,#d9a066 0 14px,#e8c08a 14px 26px,#bd7d44 26px 40px);box-shadow:inset -18px -18px 40px rgba(0,0,0,.45);position:relative;"><div style="position:absolute;width:42px;height:30px;background:#c44536;border-radius:50%;top:55%;left:30%;"></div></div></div>
+  <p>Júpiter es el planeta más grande de todos. Es tan enorme que dentro cabrían muchísimas Tierras.</p>
+  <p>No es sólido como el nuestro: está hecho casi todo de gas. En su superficie hay franjas de colores y una gran mancha roja, que es una tormenta enorme.</p>
+  <p>Además tiene muchas lunas que giran a su alrededor, como una pequeña familia.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> la gran mancha roja de Júpiter es una tormenta más grande que la Tierra.</div>
+  <div class="pageno">— 10 —</div>
+</section>
+
+<!-- 11. SATURNO -->
+<section class="page">
+  <h2 style="color:#a8862f;">Saturno y sus anillos</h2><div class="rule"></div>
+  <div class="art"><div style="position:relative;width:260px;height:200px;display:flex;align-items:center;justify-content:center;">
+     <div style="position:absolute;width:250px;height:70px;border:10px solid #e9d6a8;border-radius:50%;transform:rotate(-18deg);"></div>
+     <div class="planet" style="width:150px;height:150px;background:radial-gradient(circle at 34% 30%,#f7eccf,#e9d2a0 65%,#c2a667);"></div>
+  </div></div>
+  <p>Saturno es el planeta más presumido: tiene unos anillos preciosos que lo rodean.</p>
+  <p>Esos anillos están hechos de millones de trozos de hielo y roca que giran sin parar. De lejos parecen un sombrero brillante.</p>
+  <p>Saturno es muy ligero para su tamaño. Lucía bromea diciendo que, si hubiera una bañera gigante, Saturno flotaría en el agua.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> los anillos de Saturno son de hielo y piedras de muchos tamaños.</div>
+  <div class="pageno">— 11 —</div>
+</section>
+
+<!-- 12. URANO -->
+<section class="page">
+  <h2 style="color:#2e8f96;">Urano, el planeta inclinado</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:170px;height:170px;background:radial-gradient(circle at 34% 30%,#bdeff2,#7fd3d8 65%,#4fa6ac);"></div></div>
+  <p>Urano es de un bonito color azul verdoso, como el mar con un poco de menta.</p>
+  <p>Está muy lejos del Sol, así que hace muchísimo frío. Lo más curioso es que gira de lado, como si estuviera rodando por el espacio en vez de girar de pie.</p>
+  <p>También tiene unos anillos finitos, mucho más discretos que los de Saturno.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> Urano gira tumbado de lado, como una pelota que rueda.</div>
+  <div class="pageno">— 12 —</div>
+</section>
+
+<!-- 13. NEPTUNO -->
+<section class="page">
+  <h2 style="color:#27409e;">Neptuno, el más lejano</h2><div class="rule"></div>
+  <div class="art"><div class="planet" style="width:170px;height:170px;background:radial-gradient(circle at 34% 30%,#7d97f0,#3b5bdb 65%,#27409e);"></div></div>
+  <p>Neptuno es el planeta que vive más lejos del Sol, en el rincón más apartado de nuestra familia de planetas.</p>
+  <p>Es de un azul intenso y precioso. Allí hace un frío extremo y soplan los vientos más fuertes de todo el sistema solar.</p>
+  <p>Está tan lejos que la luz del Sol llega muy débil, como una linterna pequeñita en la oscuridad.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> Neptuno tiene los vientos más veloces de todo el sistema solar.</div>
+  <div class="pageno">— 13 —</div>
+</section>
+
+<!-- 14. ASTEROIDES Y COMETAS -->
+<section class="page">
+  <h2 style="color:#3a6ea5;">Rocas viajeras</h2><div class="rule"></div>
+  <div class="art"><span class="emoji">☄️</span><span class="emoji">🪨</span><span class="emoji">✨</span></div>
+  <p>No todo en el espacio son planetas. También hay rocas que viajan flotando.</p>
+  <p>Entre Marte y Júpiter hay un cinturón con muchísimos asteroides, que son como pedruscos de distintos tamaños dando vueltas.</p>
+  <p>Y a veces pasan los cometas: bolas de hielo y polvo que, al acercarse al Sol, dejan una larga cola brillante. Lucía pide un deseo al verlos.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> la cola de un cometa puede medir millones de kilómetros de larga.</div>
+  <div class="pageno">— 14 —</div>
+</section>
+
+<!-- 15. ESTRELLAS Y GALAXIAS -->
+<section class="page">
+  <h2 style="color:#5247a8;">Estrellas y galaxias</h2><div class="rule"></div>
+  <div class="art"><span class="emoji big">🌌</span><span class="emoji">⭐</span></div>
+  <p>Cada estrella del cielo es un sol lejano. Algunas son más grandes que el nuestro y otras más pequeñas.</p>
+  <p>Las estrellas se juntan en grupos gigantes llamados galaxias. Nosotros vivimos en una que se llama Vía Láctea, con miles de millones de estrellas.</p>
+  <p>Y hay tantísimas galaxias que nadie ha podido contarlas todas. El universo es enorme.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> hay más estrellas en el cielo que granos de arena en todas las playas.</div>
+  <div class="pageno">— 15 —</div>
+</section>
+
+<!-- 16. VUELTA A CASA -->
+<section class="page">
+  <h2 style="color:#1f6f8b;">De vuelta a casa</h2><div class="rule"></div>
+  <div class="art"><span class="emoji">🚀</span><div class="planet" style="width:150px;height:150px;background:radial-gradient(circle at 32% 28%,#9ec9ff,#3a86ff 60%,#1f5fbf);"></div></div>
+  <p>Después de tantas maravillas, Lucía y Tito ponen rumbo a casa. El cohete baja despacito hacia el planeta azul.</p>
+  <p>Al aterrizar, miran de nuevo el cielo de la noche. Ahora conocen el nombre de muchos puntitos brillantes.</p>
+  <p>Cierran los ojos, felices, y sueñan con la próxima aventura. El espacio es enorme y siempre hay algo nuevo por descubrir.</p>
+  <div class="fact"><span class="q">?</span><b>¿Sabías que...</b> tú también puedes ser explorador o exploradora: solo hace falta mirar e imaginar.</div>
+  <div class="pageno">— 16 —</div>
+</section>
+
+<!-- 17. DATOS CURIOSOS -->
+<section class="page">
+  <h2>Datos curiosos del espacio</h2><div class="rule"></div>
+  <ol class="q">
+    <li>En el espacio no se puede oír ningún sonido, porque no hay aire que lo lleve.</li>
+    <li>Los astronautas flotan dentro de la nave: a eso lo llamamos gravedad cero.</li>
+    <li>El planeta más grande, Júpiter, podría contener a todos los demás planetas juntos.</li>
+    <li>Saturno es tan ligero que flotaría en el agua si cupiera en una bañera enorme.</li>
+    <li>La luz del Sol tarda unos 8 minutos en llegar hasta la Tierra.</li>
+    <li>Un día en algunos planetas dura más que un año entero.</li>
+    <li>En la Luna saltarías mucho más alto, porque pesa menos que la Tierra.</li>
+  </ol>
+  <div class="pageno">— 17 —</div>
+</section>
+
+<!-- 18. GLOSARIO -->
+<section class="page">
+  <h2>Pequeño glosario</h2><div class="rule"></div>
+  <div><span class="term">Planeta</span><p class="desc">Un mundo grande y redondo que gira alrededor de una estrella, como el Sol.</p></div>
+  <div><span class="term">Estrella</span><p class="desc">Una bola gigante de gas que brilla con luz propia. El Sol es una estrella.</p></div>
+  <div><span class="term">Órbita</span><p class="desc">El camino que sigue un planeta o una luna al girar alrededor de otro cuerpo.</p></div>
+  <div><span class="term">Galaxia</span><p class="desc">Un grupo enorme de estrellas, gas y polvo. La nuestra es la Vía Láctea.</p></div>
+  <div><span class="term">Astronauta</span><p class="desc">Una persona que viaja y trabaja en el espacio.</p></div>
+  <div><span class="term">Cráter</span><p class="desc">Un hoyo en la superficie de un planeta o luna, hecho por un choque de rocas.</p></div>
+  <div><span class="term">Cometa</span><p class="desc">Una bola de hielo y polvo que deja una cola brillante al acercarse al Sol.</p></div>
+  <div class="pageno">— 18 —</div>
+</section>
+
+<!-- 19. ACTIVIDADES -->
+<section class="page">
+  <h2>¡A jugar y pensar!</h2><div class="rule"></div>
+  <ol class="q">
+    <li>¿Cuántos planetas visitaron Lucía y Tito? Intenta nombrarlos en orden.</li>
+    <li>¿Qué planeta es famoso por su color rojo?</li>
+    <li>¿Cuál es el planeta más grande de todos?</li>
+    <li>¿Qué planeta tiene unos anillos preciosos?</li>
+    <li>¿Dónde vivimos nosotros? ¿Cómo podemos cuidar nuestro planeta?</li>
+  </ol>
+  <div class="toc-tip" style="margin-top:14px;"><b style="color:#b07d00;">Reto extra:</b> dibuja tu propio planeta inventado y ponle un nombre divertido. 🎨</div>
+  <div class="pageno">— 19 —</div>
+</section>
+
+<!-- 20. CONTRAPORTADA -->
+<section class="page dark">
+  <div class="art" style="margin-top:40px;"><span class="emoji big">🌙</span><span class="emoji">✨</span></div>
+  <h1 style="font-size:60px;"><span class="y">Fin</span></h1>
+  <p class="center" style="max-width:420px;margin:10px auto;color:#cdd6ff;">Gracias por viajar con Lucía y Tito. Sigue mirando las estrellas: el universo está lleno de aventuras esperando por ti.</p>
+  <p class="center" style="font-size:40px;">🚀 🪐 🌟</p>
+  <p class="subtitle" style="margin-top:auto;">Un Viaje por el Espacio · Cuento infantil ilustrado</p>
+  <div class="pageno">— 20 —</div>
+</section>
+
+</body>
+</html>
