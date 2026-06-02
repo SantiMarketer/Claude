@@ -1,0 +1,384 @@
+/* ============================================================
+   Un Viaje por el Sistema Solar - Ebook infantil
+   Hoja de estilos
+   ============================================================ */
+
+/* ---------- Variables de color ---------- */
+:root {
+  --espacio-1: #0b1026;
+  --espacio-2: #1b2350;
+  --espacio-3: #2c357a;
+  --estrella: #ffe9a8;
+  --sol: #ffd54a;
+  --cohete: #ff6b6b;
+  --acento: #7fd1ff;
+  --acento-2: #b388ff;
+  --rosa: #ff8fc8;
+  --verde: #6be6a8;
+  --texto: #2a2a4a;
+  --texto-claro: #fdfdff;
+  --papel: #fffaf2;
+  --sombra: rgba(11, 16, 38, 0.35);
+}
+
+/* ---------- Reset básico ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Trebuchet MS", "Segoe UI", "Comic Sans MS", "Verdana", sans-serif;
+  color: var(--texto-claro);
+  background: radial-gradient(circle at 20% 20%, #2c357a 0%, #1b2350 40%, #0b1026 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- Cielo de estrellas de fondo ---------- */
+.estrellas-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.estrella-fondo {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: titilar var(--dur, 3s) ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes titilar {
+  0%, 100% { opacity: 0.25; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ---------- Contenedor del libro ---------- */
+.libro {
+  position: relative;
+  z-index: 2;
+  width: min(94vw, 1000px);
+  height: min(92vh, 680px);
+  background: var(--papel);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px var(--sombra), 0 0 0 8px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Páginas ---------- */
+.paginas {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.pagina {
+  position: absolute;
+  inset: 0;
+  padding: 28px 36px 18px;
+  display: none;
+  flex-direction: column;
+  color: var(--texto);
+  background: var(--papel);
+  animation: aparecer 0.5s ease both;
+  overflow-y: auto;
+}
+
+.pagina.activa {
+  display: flex;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateX(28px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Cada página de contenido tiene 2 columnas: texto + ilustración */
+.pagina-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: center;
+  flex: 1;
+}
+
+.pagina-texto h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--espacio-2);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.pagina-texto .numero-tema {
+  display: inline-block;
+  background: var(--acento-2);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.pagina-texto p {
+  font-size: clamp(0.95rem, 1.6vw, 1.12rem);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+
+/* Caja de dato curioso */
+.dato {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #fff3cd, #ffe49b);
+  border: 3px dashed var(--sol);
+  border-radius: 18px;
+  padding: 14px 16px;
+  position: relative;
+  color: #5a4500;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.dato strong {
+  display: block;
+  color: var(--cohete);
+  margin-bottom: 4px;
+  font-size: 1.02rem;
+}
+
+.dato::before {
+  content: "💡";
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  font-size: 1.8rem;
+  background: var(--papel);
+  border-radius: 50%;
+  padding: 0 4px;
+}
+
+/* Ilustración */
+.pagina-ilustracion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagina-ilustracion svg {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(11, 16, 38, 0.25));
+}
+
+/* ---------- Portada ---------- */
+.portada {
+  background: radial-gradient(circle at 50% 30%, #2c357a 0%, #141a3e 70%, #0b1026 100%);
+  color: var(--texto-claro);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.portada h1 {
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  line-height: 1.05;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 8px;
+}
+
+.portada .subtitulo {
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  color: var(--estrella);
+  margin-bottom: 18px;
+}
+
+.portada .autores {
+  margin-top: 18px;
+  font-size: 1rem;
+  color: var(--acento);
+}
+
+.portada-ilustracion svg {
+  width: min(60vw, 320px);
+  height: auto;
+  margin: 6px auto 10px;
+  display: block;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.4));
+}
+
+.boton-empezar {
+  margin-top: 16px;
+  background: linear-gradient(135deg, var(--cohete), #ff9472);
+  color: white;
+  border: none;
+  font-size: 1.15rem;
+  font-weight: bold;
+  font-family: inherit;
+  padding: 14px 34px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #c84b4b, 0 12px 18px rgba(0, 0, 0, 0.3);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.boton-empezar:hover { transform: translateY(-2px); }
+.boton-empezar:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #c84b4b, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Página final ---------- */
+.final {
+  background: radial-gradient(circle at 50% 40%, #2c357a 0%, #141a3e 70%, #0b1026 100%);
+  color: var(--texto-claro);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.final h2 { color: var(--estrella); font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 12px; }
+.final p { color: var(--texto-claro); max-width: 520px; line-height: 1.6; margin-bottom: 10px; }
+
+/* ---------- Quiz ---------- */
+.quiz {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.quiz h2 { color: var(--espacio-2); margin-bottom: 6px; }
+.quiz .quiz-intro { margin-bottom: 14px; color: var(--texto); }
+
+.pregunta {
+  background: #f1f3ff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border: 2px solid #d9deff;
+}
+
+.pregunta p.enunciado {
+  font-weight: bold;
+  color: var(--espacio-2);
+  margin-bottom: 10px;
+}
+
+.opciones { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.opcion {
+  background: white;
+  border: 2px solid var(--acento);
+  color: var(--texto);
+  border-radius: 12px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.opcion:hover { transform: translateY(-2px); background: #eef7ff; }
+.opcion.correcta { background: var(--verde); border-color: #2bbd7e; color: #07432a; font-weight: bold; }
+.opcion.incorrecta { background: #ffd5d5; border-color: var(--cohete); color: #7a1f1f; }
+
+.quiz-resultado {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--cohete);
+  text-align: center;
+  min-height: 1.4em;
+}
+
+/* ---------- Barra de navegación ---------- */
+.navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 22px;
+  background: linear-gradient(90deg, var(--espacio-2), var(--espacio-3));
+  color: white;
+}
+
+.nav-boton {
+  background: white;
+  color: var(--espacio-2);
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.12s ease, opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-boton:hover:not(:disabled) { transform: translateY(-2px); }
+.nav-boton:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.indicador {
+  flex: 1;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.barra-progreso {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.barra-progreso-relleno {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--estrella), var(--cohete));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* ---------- Animaciones decorativas ---------- */
+.flotando { animation: flotar 4s ease-in-out infinite; transform-origin: center; }
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.girando { animation: girar 24s linear infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes girar { to { transform: rotate(360deg); } }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .libro { height: 94vh; border-radius: 18px; }
+  .pagina { padding: 18px 20px 14px; }
+  .pagina-contenido { grid-template-columns: 1fr; gap: 14px; }
+  .pagina-ilustracion { order: -1; }
+  .pagina-ilustracion svg { max-width: 220px; }
+  .nav-boton { padding: 9px 14px; font-size: 0.9rem; }
+  .indicador { font-size: 0.82rem; }
+}
