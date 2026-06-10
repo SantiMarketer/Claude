@@ -25,6 +25,8 @@ export interface RaycastHit {
   pz: number;
 }
 
+export const MAX_HEALTH = 20;
+
 export class Player {
   // Feet position (centre of the player's base).
   readonly pos = new THREE.Vector3();
@@ -34,10 +36,49 @@ export class Player {
   onGround = false;
   fly = false;
 
+  health = MAX_HEALTH;
+  dead = false;
+  private peakY = 0;
+
   private world: World;
 
   constructor(world: World) {
     this.world = world;
+  }
+
+  // Call after teleporting/spawning to reset fall tracking.
+  onSpawn(): void {
+    this.peakY = this.pos.y;
+    this.vel.set(0, 0, 0);
+    this.onGround = false;
+  }
+
+  applyDamage(amount: number): void {
+    if (this.dead || amount <= 0) return;
+    this.health = Math.max(0, this.health - amount);
+    if (this.health <= 0) this.dead = true;
+  }
+
+  heal(amount: number): void {
+    if (this.dead) return;
+    this.health = Math.min(MAX_HEALTH, this.health + amount);
+  }
+
+  respawn(x: number, y: number, z: number): void {
+    this.pos.set(x, y, z);
+    this.vel.set(0, 0, 0);
+    this.health = MAX_HEALTH;
+    this.dead = false;
+    this.peakY = y;
+    this.onGround = false;
+    this.fly = false;
+  }
+
+  // Camera/look direction.
+  getForward(): THREE.Vector3 {
+    const dir = new THREE.Vector3(0, 0, -1);
+    dir.applyEuler(new THREE.Euler(this.pitch, this.yaw, 0, "YXZ"));
+    return dir;
   }
 
   // True if the player's AABB at the given feet position overlaps a solid block.
@@ -78,6 +119,8 @@ export class Player {
   }
 
   update(dt: number, input: InputState): void {
+    const prevOnGround = this.onGround;
+
     // Desired horizontal direction relative to the yaw.
     const forward = (input.forward ? 1 : 0) - (input.back ? 1 : 0);
     const strafe = (input.right ? 1 : 0) - (input.left ? 1 : 0);
@@ -122,6 +165,22 @@ export class Player {
       this.moveAxis(step.x, 0, 0);
       this.moveAxis(0, 0, step.z);
       this.moveAxisY(step.y);
+    }
+
+    // Fall damage: lose 1 HP per block fallen beyond a 4-block safe margin.
+    if (!this.fly) {
+      if (this.onGround) {
+        if (!prevOnGround) {
+          const fall = this.peakY - this.pos.y;
+          const dmg = Math.floor(fall - 4);
+          if (dmg > 0) this.applyDamage(dmg);
+        }
+        this.peakY = this.pos.y;
+      } else if (this.pos.y > this.peakY) {
+        this.peakY = this.pos.y;
+      }
+    } else {
+      this.peakY = this.pos.y;
     }
   }
 
