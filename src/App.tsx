@@ -1,5 +1,5 @@
-import MinecraftGame from "./minecraft/MinecraftGame";
+import WordApp from "./word/WordApp";
 
 export default function App() {
-  return <MinecraftGame />;
+  return <WordApp />;
 }
