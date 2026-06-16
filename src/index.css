@@ -71,3 +71,92 @@ input[type="range"]::-moz-range-thumb {
   background: rgba(120, 130, 150, 0.6);
   background-clip: content-box;
 }
+
+
+/* ===== Editor de texto (WordApp) ===== */
+/* Estilos del contenido editable para que párrafos, títulos, listas, citas,
+   código, tablas y enlaces se vean como en un documento real. */
+.word-content {
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #1f2937;
+  outline: none;
+  word-wrap: break-word;
+}
+.word-content:focus {
+  outline: none;
+}
+.word-content p {
+  margin: 0 0 10px;
+}
+.word-content h1 {
+  font-size: 22pt;
+  font-weight: 700;
+  margin: 14px 0 10px;
+  line-height: 1.25;
+}
+.word-content h2 {
+  font-size: 17pt;
+  font-weight: 700;
+  margin: 12px 0 8px;
+  line-height: 1.3;
+}
+.word-content h3 {
+  font-size: 14pt;
+  font-weight: 700;
+  margin: 10px 0 6px;
+}
+.word-content ul,
+.word-content ol {
+  margin: 0 0 10px;
+  padding-left: 28px;
+}
+.word-content li {
+  margin: 2px 0;
+}
+.word-content blockquote {
+  border-left: 3px solid #c7ccd6;
+  margin: 10px 0;
+  padding: 4px 16px;
+  color: #555;
+  font-style: italic;
+}
+.word-content pre {
+  background: #f3f4f6;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 10.5pt;
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+.word-content a {
+  color: #1d56f5;
+  text-decoration: underline;
+}
+.word-content table {
+  border-collapse: collapse;
+  margin: 8px 0;
+}
+.word-content td,
+.word-content th {
+  border: 1px solid #bbb;
+  padding: 6px 8px;
+}
+.word-content img {
+  max-width: 100%;
+  height: auto;
+}
+.word-content hr {
+  border: none;
+  border-top: 1px solid #cbd1db;
+  margin: 16px 0;
+}
+/* Marcador de documento vacío. */
+.word-content:empty::before,
+.word-content > p:only-child:empty::before {
+  content: "Empieza a escribir tu documento…";
+  color: #9aa3b2;
+  pointer-events: none;
+}

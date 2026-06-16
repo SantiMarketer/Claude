@@ -1,59 +1,64 @@
-# Minecraft · Voxel Clone
+# Escritor · Editor de texto
 
-Un clon de Minecraft que corre en el navegador, construido con **React + Vite +
-TypeScript** y un motor de voxels propio sobre **Three.js**.
+Un editor de texto enriquecido **tipo Microsoft Word** que funciona en el
+navegador, construido con **React + Vite + TypeScript** y **Tailwind CSS**. No
+necesita servidor ni conexión: todo ocurre en tu equipo.
 
-> Nota: este clon vive en la rama `minecraft-clone`. La rama `main` conserva la
-> app original "Enfoque".
+> Esta app vive en la rama `word-editor`. Otras ramas del repositorio conservan
+> apps distintas (Enfoque, clon de Minecraft).
 
 ## Características
 
-- 🌍 **Mundo procedural infinito** generado con ruido Perlin (colinas, playas,
-  océanos y árboles). Los chunks se cargan y descargan alrededor del jugador.
-- ⛏️ **Romper y colocar bloques** con raycasting de voxels (algoritmo DDA).
-- 🧱 **Atlas de texturas pixel-art** generado proceduralmente en un `<canvas>`
-  (hierba, tierra, piedra, roca, tablones, tronco, hojas, arena, cristal…).
-- 🚶 **Física en primera persona**: gravedad, salto, colisión AABB con el mundo
-  y un **modo vuelo**.
-- 💡 **Iluminación por oclusión ambiental** horneada en los vértices y agua
-  semitransparente.
-- 🎒 **Hotbar** con 9 bloques seleccionables.
+- ✍️ **Edición enriquecida**: negrita, cursiva, subrayado, tachado, subíndice y
+  superíndice.
+- 🔤 **Fuentes y tamaños** reales en puntos, color de texto y resaltado.
+- 🧩 **Estilos de párrafo**: texto normal, Título 1/2/3, cita y bloque de código.
+- ↔️ **Alineación** (izquierda, centro, derecha, justificado), listas con
+  viñetas y numeradas, y sangrías.
+- 🔗 **Insertar** enlaces, imágenes (por URL o subiéndolas), **tablas** y líneas.
+- 🔍 **Buscar y reemplazar** (con opción de distinguir mayúsculas).
+- 🗂️ **Gestor de documentos**: crea, abre, renombra y elimina varios documentos.
+  Se **autoguardan** en el navegador.
+- 💾 **Exporta a archivos reales**: Word (`.doc`), HTML (`.html`), texto
+  (`.txt`) y **PDF** (mediante imprimir).
+- 📥 **Importa** archivos `.txt`, `.html` y `.doc`.
+- 🌗 **Tema claro/oscuro**, zoom y tamaño de página A4 / Carta.
 
-## Controles
+## Atajos de teclado
 
-| Acción            | Tecla / Ratón                |
-| ----------------- | ---------------------------- |
-| Moverse           | `W` `A` `S` `D`              |
-| Mirar             | Ratón                        |
-| Saltar            | `Espacio`                    |
-| Correr            | `Ctrl`                       |
-| Romper bloque     | Clic izquierdo               |
-| Colocar bloque    | Clic derecho                 |
-| Elegir bloque     | `1`–`9` o rueda del ratón    |
-| Volar (toggle)    | `F`                          |
-| Volar arriba/abajo| `Espacio` / `Shift`          |
-| Liberar el ratón  | `Esc`                        |
+| Acción              | Atajo            |
+| ------------------- | ---------------- |
+| Negrita             | `Ctrl/Cmd + B`   |
+| Cursiva             | `Ctrl/Cmd + I`   |
+| Subrayado           | `Ctrl/Cmd + U`   |
+| Guardar             | `Ctrl/Cmd + S`   |
+| Buscar y reemplazar | `Ctrl/Cmd + F`   |
+| Imprimir / PDF      | `Ctrl/Cmd + P`   |
+| Deshacer / Rehacer  | `Ctrl/Cmd + Z/Y` |
 
-Necesita teclado y ratón (usa el control de puntero del navegador), así que
-juégalo en un ordenador de escritorio.
-
-## Desarrollo
+## Uso en tu PC
 
 ```bash
+# 1. Instalar dependencias (solo la primera vez)
 npm install
-npm run dev      # servidor de desarrollo
-npm run build    # comprobación de tipos + build de producción
+
+# 2. Arrancar en modo desarrollo
+npm run dev          # abre la URL que muestra la terminal (p. ej. http://localhost:5173)
+
+# 3. Compilar para producción
+npm run build        # genera la carpeta dist/
+npm run preview      # sirve la versión compilada para probarla
 ```
 
-## Estructura del motor (`src/minecraft/`)
+## Estructura (`src/word/`)
 
-| Archivo             | Responsabilidad                                        |
-| ------------------- | ------------------------------------------------------ |
-| `noise.ts`          | Ruido Perlin 2D + fBm para el terreno                  |
-| `blocks.ts`         | Tipos de bloque, tiles del atlas y propiedades         |
-| `textures.ts`       | Generación procedural del atlas de texturas            |
-| `world.ts`          | Chunks, generación de terreno, agua y árboles          |
-| `mesher.ts`         | Construcción de la malla por chunk (culling + AO)      |
-| `player.ts`         | Física, colisión y raycast de voxels                   |
-| `game.ts`           | Bucle, render, streaming de chunks e interacción       |
-| `MinecraftGame.tsx` | Componente React + HUD (mira, hotbar, instrucciones)   |
+| Archivo           | Responsabilidad                                          |
+| ----------------- | -------------------------------------------------------- |
+| `WordApp.tsx`     | App principal: layout, menú, documentos, estado          |
+| `Toolbar.tsx`     | Barra de herramientas (cinta) con todos los controles    |
+| `useEditor.ts`    | Hook del editor: comandos de formato y estado            |
+| `FindReplace.tsx` | Panel de buscar y reemplazar                             |
+| `exporters.ts`    | Exportar/importar `.doc`, `.html`, `.txt` y PDF          |
+| `storage.ts`      | Guardado de documentos en `localStorage`                 |
+| `icons.tsx`       | Iconos SVG de la interfaz                                 |
+| `types.ts`        | Tipos compartidos                                        |
